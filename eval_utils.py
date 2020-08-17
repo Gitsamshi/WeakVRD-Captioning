@@ -67,11 +67,11 @@ def eval_split(model, loader, eval_kwargs={}):
         tmp = [data['fc_feats'], data['att_feats'], data['att_masks'], data['verbs']]
         tmp = [_ if _ is None else torch.from_numpy(_).cuda() for _ in tmp]
         fc_feats, att_feats, att_masks, relas = tmp
-        sg_data = {key: data['vrg_data'][key] if data['vrg_data'][key] is None else torch.from_numpy(data['vrg_data'][key]).cuda() for key in data['vrg_data']}
+        vrg_data = {key: data['vrg_data'][key] if data['vrg_data'][key] is None else torch.from_numpy(data['vrg_data'][key]).cuda() for key in data['vrg_data']}
 
         # forward the model to also get generated samples for each image
         with torch.no_grad():
-            seq = model(sg_data, fc_feats, att_feats, relas, att_masks, opt=eval_kwargs, mode='sample')[0].data
+            seq = model(vrg_data, fc_feats, att_feats, relas, att_masks, opt=eval_kwargs, mode='sample')[0].data
         # Print beam search
         if beam_size > 1 and verbose_beam:
             for i in range(loader.batch_size):
