@@ -23,9 +23,9 @@ opt.vocab_size = loader.vocab_size
 opt.seq_length = loader.seq_length
 
 infos = load_info(opt)
-opt.resume_from = 'experiment-xe-mod'
+#opt.resume_from = 'experiment-rl' # set experiment-mle or experiment-rl
 opt.resume_from_best = True
-opt.beam_size = 3
+opt.beam_size = 2 #set 2 or 3
 
 decoder = setup(opt).train().cuda()
 
@@ -37,11 +37,12 @@ print ('opt', opt)
 
 eval_kwargs = {'split': 'test',
                'dataset': opt.input_json,
-               'expand_features': False}
+               'expand_features': False,
+               'dump_json': 1}
 eval_kwargs.update(vars(opt))
 predictions, lang_stats = eval_utils.eval_split(decoder, loader, eval_kwargs)
 
-if opt.dump_json == 1:
+if eval_kwargs['dump_json'] == 1:
     # dump the json
     if not os.path.exists('vis'):
         os.makedirs('vis')

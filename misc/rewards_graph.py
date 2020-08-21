@@ -37,7 +37,7 @@ def get_self_critical_reward(model, core_args, sg_data, fc_feats, att_feats, wea
     # get greedy decoding baseline
     model.eval()
     with torch.no_grad():
-        greedy_res, _ = model(sg_data, fc_feats, att_feats, weak_relas[::seq_per_img, :], att_masks=att_masks, _core_args=core_args,
+        greedy_res, _ = model(sg_data, fc_feats, att_feats, weak_relas, att_masks=att_masks, _core_args=core_args,
                               opt={'expand_features': False}, mode='sample')
     model.train()
     greedy_res = expand_feats([greedy_res], seq_per_img)[0]
