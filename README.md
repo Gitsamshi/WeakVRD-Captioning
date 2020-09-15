@@ -22,9 +22,11 @@ BTW, you need to download [coco-captions](https://github.com/tylin/coco-caption)
 
 ### Data Files and Models
 
-Files: Add files in data directory in [google drive](https://drive.google.com/drive/folders/1VYeFocLMz2msICHu8DFRWBwTKcok7VAe?usp=sharing) to data directory here. See data/README for more details. 
+Files: Add files in data directory in [google drive](https://drive.google.com/drive/folders/1VYeFocLMz2msICHu8DFRWBwTKcok7VAe?usp=sharing) or [baidu netdisk](链接：https://pan.baidu.com/s/1ddtfdlwD65cm4JmVu6GF3w 
+提取码：39pa) to data directory here. See data/README for more details. 
 
-Models: Add log directory in [google drive](https://drive.google.com/drive/folders/1VYeFocLMz2msICHu8DFRWBwTKcok7VAe?usp=sharing) here.
+Models: Add log directory in [google drive](https://drive.google.com/drive/folders/1VYeFocLMz2msICHu8DFRWBwTKcok7VAe?usp=sharing) or or [baidu netdisk](链接：https://pan.baidu.com/s/1ddtfdlwD65cm4JmVu6GF3w 
+提取码：39pa) here.
 
 ### Scripts
 
